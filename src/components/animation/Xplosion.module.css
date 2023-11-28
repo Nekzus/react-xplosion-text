@@ -54,18 +54,10 @@ a {
   animation: float 5s ease infinite;
 }
 
-/* .fancy:hover > .outer > .inner > .letter {
-  background: linear-gradient(
-    to right,
-    rgb(41, 121, 255),
-    rgb(42, 252, 152),
-    rgb(41, 121, 255)
-  );
-  background-size: 1000%;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: background-pan 150s linear infinite;
-} */
+.fancy:hover > .outer > .inner > .letter {
+  position: relative;
+  display: inline-block;
+}
 
 .fancy:hover > .outer > .inner > .letter::before {
   content: attr(data-text);
