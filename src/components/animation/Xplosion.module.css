@@ -54,7 +54,7 @@ a {
   animation: float 5s ease infinite;
 }
 
-.fancy:hover > .outer > .inner > .letter {
+/* .fancy:hover > .outer > .inner > .letter {
   background: linear-gradient(
     to right,
     rgb(41, 121, 255),
@@ -64,6 +64,28 @@ a {
   background-size: 1000%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: background-pan 150s linear infinite;
+} */
+
+.fancy:hover > .outer > .inner > .letter::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: -1;
+  background: linear-gradient(
+    to right,
+    rgb(41, 121, 255),
+    rgb(42, 252, 152),
+    rgb(41, 121, 255)
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  -webkit-mask-image: linear-gradient(to right, transparent, white);
+  mask-image: linear-gradient(to right, transparent, white);
   animation: background-pan 150s linear infinite;
 }
 
