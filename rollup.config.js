@@ -38,6 +38,11 @@ export default {
       clean: true,
       exclude: ["node_modules"],
     }),
-    postcss(),
+    postcss({
+      modules: true,
+      extract: true,
+      minimize: true,
+      extensions: [".css", ".scss"],
+    }),
   ],
 };
