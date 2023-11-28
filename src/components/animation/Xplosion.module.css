@@ -60,7 +60,12 @@ a {
 }
 
 .fancy:hover > .outer > .inner > .letter {
-  background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
+  background: linear-gradient(
+    to right,
+    rgb(41, 121, 255),
+    rgb(42, 252, 152),
+    rgb(41, 121, 255)
+  );
   background-size: 1000%;
   background-clip: text;
   -webkit-text-fill-color: transparent;
