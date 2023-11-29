@@ -57,6 +57,7 @@ a {
 .fancy:hover > .outer > .inner > .letter {
   background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
   background-size: 1000%;
+  -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
   animation: background-pan 150s linear infinite;
@@ -109,32 +110,3 @@ a {
 .fancy:hover > .outer:nth-child(12) {
   transform: translate(120%, -30%) rotate(-10deg);
 }
-
-/* .fancy:hover > .outer > .inner > .letter {
-  position: relative;
-  display: inline-block;
-}
-
-.fancy:hover > .outer > .inner > .letter::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -1;
-  background: linear-gradient(
-    to right,
-    rgb(41, 121, 255),
-    rgb(42, 252, 152),
-    rgb(41, 121, 255)
-  );
-  -webkit-mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1"><text x="0" y="0.9" font-size="1" fill="white" font-family="Arial">%data%</text></svg>')
-    no-repeat;
-  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%" viewBox="0 0 1 1"><text x="0" y="0.9" font-size="1" fill="white" font-family="Arial">%data%</text></svg>')
-    no-repeat;
-  -webkit-mask-size: 100% 100%;
-  mask-size: 100% 100%;
-  color: transparent;
-  animation: background-pan 150s linear infinite;
-} */
