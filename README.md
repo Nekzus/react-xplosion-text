@@ -17,14 +17,17 @@ npm install @nekzus/react-xplosion
 
 ## Usage
 
+### Basic Implementation
+The Xplosion component can be easily incorporated into your React application. Simply provide the text you want to animate as the textInput prop:
+
 ```jsx
 import React from 'react';
-import Xplosion from '@nekzus/react-xplosion';
+import {Xplosion} from '@nekzus/react-xplosion';
 
 
 const App = () => {
   return (
-    <Xplosion textInput="Hello, world!" className="my-custom-class">
+    <Xplosion textInput="Hello, world!" className="class-tw">
       <button>Click here!</button>
     </Xplosion>
   );
@@ -33,20 +36,37 @@ const App = () => {
 export default App;
 ```
 
-In this example, the HackerEffectText component wraps around your content, animating the transition from the initialValue ("Access Granted") to the targetValue ("Welcome to the System"). The capitalize prop is set to true, giving the text a distinct uppercase hacker aesthetic.
+### Props
+The Xplosion component accepts the following props:
 
-## Props
-children: Child components to which the explosion will be applied.
-className: Custom CSS classes to be added to the explosion.
-textInput: Text to be exploded.
-
-## Example
+- textInput (required): The text to be animated explosively.
+- className: Additional class names to be applied to the component tailwind CSS.
+- colorClassName: A color class to specify the color scheme of the explosive animation.
+Available options: "blueColor", "greenColor", "pinkColor", "orangeColor", "darkColor", "lightColor".
+- style: Additional styles to be applied to the component CSS.
+  
+### Example with Custom Styling
+You can customize the appearance of the Xplosion component by providing additional styles or class names:
 
 
 ```jsx
-<Xplosion textInput="Hello, world!" className="my-custom-class">
-  <h1>My Custom Explosion</h1>
-</Xplosion>
+import React from 'react';
+import {Xplosion} from '@nekzus/react-xplosion';
+
+const App = () => {
+  return (
+    <Xplosion
+      textInput="Hello, World!"
+      className="class-tw"
+      colorClassName="pinkColor"
+      style={{ fontSize: '24px', fontWeight: 'bold' }}
+    >
+      <p>Hover over me with style</p>
+    </Xplosion>
+  );
+};
+
+export default App;
 ```
 
 <!-- ## Codesandbox -->

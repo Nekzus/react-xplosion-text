@@ -4,12 +4,22 @@ import styles from "./Xplosion.module.css";
 interface XplosionProps {
   children: React.ReactNode;
   className?: string;
+  colorClassName?:
+    | "blueColor"
+    | "greenColor"
+    | "pinkColor"
+    | "orangeColor"
+    | "darkColor"
+    | "lightColor";
+  style?: React.CSSProperties;
   textInput: string;
 }
 
 const Xplosion: React.FC<XplosionProps> = ({
   children,
   className,
+  colorClassName = "blueColor",
+  style,
   textInput,
 }) => {
   const [lines, setLines] = useState<string[]>([]);
@@ -24,9 +34,17 @@ const Xplosion: React.FC<XplosionProps> = ({
 
         words.forEach((word, wordIndex) => {
           const wordContainer = document.createElement("span");
-          wordContainer.className = className
-            ? `${styles.fancy} ${className}`
-            : `${styles.fancy} ${styles.word}`;
+          let wordContainerClass = styles.fancy;
+
+          if (className) {
+            wordContainerClass += ` ${className}`;
+          }
+
+          if (colorClassName) {
+            wordContainerClass += ` ${styles[colorClassName]}`;
+          }
+
+          wordContainer.className = wordContainerClass;
 
           word.split("").forEach((value) => {
             const outer = document.createElement("span");
@@ -60,7 +78,7 @@ const Xplosion: React.FC<XplosionProps> = ({
     if (container) {
       enhance(container);
     }
-  }, [className, textInput]);
+  }, [className, colorClassName, textInput]);
 
   const startAnimation = () => {
     let iterations: number[] = Array(lines.length).fill(0);
@@ -115,7 +133,7 @@ const Xplosion: React.FC<XplosionProps> = ({
       onMouseOver: handleMouseOver,
       onMouseLeave: handleMouseLeave,
     },
-    <div {...{ className }} ref={containerRef}>
+    <div className={className} style={{ ...style }} ref={containerRef}>
       {lines.map((line, index) => (
         <span key={index}>{line}</span>
       ))}

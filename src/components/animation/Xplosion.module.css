@@ -1,6 +1,65 @@
 :root {
-  --green: rgb(42, 252, 152);
   --blue: rgb(41, 121, 255);
+  --green: rgb(42, 252, 152);
+  --yellow: rgb(255, 255, 0);
+  --pink: rgb(230, 94, 230);
+  --orange: rgb(255, 165, 0);
+  --white: rgb(241, 241, 241);
+  --gray: rgb(99, 97, 99);
+}
+
+.blueColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--blue),
+    var(--green),
+    var(--blue)
+  );
+}
+
+.greenColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--green),
+    var(--yellow),
+    var(--green)
+  );
+}
+
+.pinkColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--pink),
+    var(--blue),
+    var(--pink)
+  );
+}
+
+.orangeColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--orange),
+    var(--pink),
+    var(--orange)
+  );
+}
+
+.darkColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--white),
+    var(--gray),
+    var(--white)
+  );
+}
+
+.lightColor {
+  --hover-background: linear-gradient(
+    to right,
+    var(--gray),
+    var(--white),
+    var(--gray)
+  );
 }
 
 @keyframes float {
@@ -25,7 +84,7 @@
 }
 
 .word {
-  color: white;
+  color: var(--white);
   font-size: clamp(2rem, 8vw, 10rem);
   font-family: "Rubik", sans-serif;
   margin: 0rem;
@@ -55,7 +114,7 @@ a {
 }
 
 .fancy:hover > .outer > .inner > .letter {
-  background: linear-gradient(to right, var(--blue), var(--green), var(--blue));
+  background: var(--hover-background);
   background-size: 1000%;
   -webkit-background-clip: text;
   background-clip: text;
