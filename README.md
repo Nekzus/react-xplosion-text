@@ -1,5 +1,6 @@
 # React Xplosion Animation
 
+
 [![Github Workflow](https://github.com/nekzus/react-xplosion-text/actions/workflows/publish.yml/badge.svg?event=push)](https://github.com/Nekzus/hacker-effect-text/actions/workflows/publish.yml)
 [![npm-version](https://img.shields.io/npm/v/@nekzus/react-xplosion.svg)](https://www.npmjs.com/package/@nekzus/react-xplosion)
 [![npm-month](https://img.shields.io/npm/dm/@nekzus/react-xplosion.svg)](https://www.npmjs.com/package/@nekzus/react-xplosion)
