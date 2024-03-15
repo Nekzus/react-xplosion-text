@@ -172,4 +172,4 @@ var Xplosion = function (_a) {
 };
 
 exports.Xplosion = Xplosion;
-//# sourceMappingURL=index.js.map
+//# sourceMappingURL=index.cjs.js.map
